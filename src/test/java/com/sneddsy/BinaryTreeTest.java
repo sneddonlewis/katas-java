@@ -1,5 +1,6 @@
 package com.sneddsy;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -37,6 +38,6 @@ public class BinaryTreeTest extends TestCase {
         expected.add(100);
 
         var actual = BinaryTree.preOrderSearch(testTreeOne);
-        assertTrue("Failed", expected.containsAll(actual));
+        Assert.assertEquals(expected, actual);
     }
 }
