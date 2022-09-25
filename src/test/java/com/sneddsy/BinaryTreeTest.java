@@ -72,4 +72,21 @@ public class BinaryTreeTest extends TestCase {
         var actual = BinaryTree.inOrderSearch(testTreeOne);
         Assert.assertEquals(expected, actual);
     }
+
+    public void testPostOrderSearch() {
+        List<Integer> expected = new ArrayList<>();
+        expected.add(7);
+        expected.add(5);
+        expected.add(15);
+        expected.add(10);
+        expected.add(29);
+        expected.add(45);
+        expected.add(30);
+        expected.add(100);
+        expected.add(50);
+        expected.add(20);
+
+        var actual = BinaryTree.inOrderSearch(testTreeOne);
+        Assert.assertEquals(expected, actual);
+    }
 }
