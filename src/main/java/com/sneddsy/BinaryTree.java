@@ -16,7 +16,6 @@ public class BinaryTree {
             return path;
         }
 
-        // recurse
         // pre
         path.add(current.get().getValue());
 
@@ -24,7 +23,6 @@ public class BinaryTree {
         walkPreOrder(current.get().getLeft(), path);
         walkPreOrder(current.get().getRight(), path);
 
-        // post
         return path;
     }
 
@@ -40,14 +38,11 @@ public class BinaryTree {
         }
 
         // recurse
-        // pre
-
-        // recurse
         walkInOrder(current.get().getLeft(), path);
+        // in order
         path.add(current.get().getValue());
         walkInOrder(current.get().getRight(), path);
 
-        // post
         return path;
     }
 
@@ -63,14 +58,12 @@ public class BinaryTree {
         }
 
         // recurse
-        // pre
-
-        // recurse
         walkPostOrder(current.get().getLeft(), path);
-        path.add(current.get().getValue());
         walkPostOrder(current.get().getRight(), path);
 
         // post
+        path.add(current.get().getValue());
+
         return path;
     }
 }

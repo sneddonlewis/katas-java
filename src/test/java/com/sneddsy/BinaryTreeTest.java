@@ -1,6 +1,5 @@
 package com.sneddsy;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class BinaryTreeTest extends TestCase {
         expected.add(100);
 
         var actual = BinaryTree.preOrderSearch(testTreeOne);
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     public void testInOrderSearch() {
@@ -70,7 +69,7 @@ public class BinaryTreeTest extends TestCase {
         expected.add(100);
 
         var actual = BinaryTree.inOrderSearch(testTreeOne);
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     public void testPostOrderSearch() {
@@ -86,7 +85,7 @@ public class BinaryTreeTest extends TestCase {
         expected.add(50);
         expected.add(20);
 
-        var actual = BinaryTree.inOrderSearch(testTreeOne);
-        Assert.assertEquals(expected, actual);
+        var actual = BinaryTree.postOrderSearch(testTreeOne);
+        assertEquals(expected, actual);
     }
 }
