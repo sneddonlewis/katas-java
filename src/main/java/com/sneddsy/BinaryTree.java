@@ -6,10 +6,10 @@ import java.util.Optional;
 
 public class BinaryTree {
     public static List<Integer> preOrderSearch(BinaryNode<Integer> head) {
-        return walk(Optional.of(head), new ArrayList<>());
+        return walkPreOrder(Optional.of(head), new ArrayList<>());
     }
 
-    private static List<Integer> walk(
+    private static List<Integer> walkPreOrder(
             Optional<BinaryNode<Integer>> current,
             List<Integer> path) {
         if (current.isEmpty()) {
@@ -21,8 +21,31 @@ public class BinaryTree {
         path.add(current.get().getValue());
 
         // recurse
-        walk(current.get().getLeft(), path);
-        walk(current.get().getRight(), path);
+        walkPreOrder(current.get().getLeft(), path);
+        walkPreOrder(current.get().getRight(), path);
+
+        // post
+        return path;
+    }
+
+    public static List<Integer> inOrderSearch(BinaryNode<Integer> head) {
+        return walkInOrder(Optional.of(head), new ArrayList<>());
+    }
+
+    private static List<Integer> walkInOrder(
+            Optional<BinaryNode<Integer>> current,
+            List<Integer> path) {
+        if (current.isEmpty()) {
+            return path;
+        }
+
+        // recurse
+        // pre
+        path.add(current.get().getValue());
+
+        // recurse
+        walkInOrder(current.get().getLeft(), path);
+        walkInOrder(current.get().getRight(), path);
 
         // post
         return path;
